@@ -3,12 +3,11 @@ class Solution {
         
         int sum = 0;
         int digitSum = 0;
-        for (int i =0; i < nums.length; i++) {
+        for (int number : nums) {
 
-            sum = sum + nums[i];
+            sum = sum + number;
 
             int individualDigitSum = 0;
-            int number = nums[i];
             do {
 
                 individualDigitSum = individualDigitSum + (number % 10);
