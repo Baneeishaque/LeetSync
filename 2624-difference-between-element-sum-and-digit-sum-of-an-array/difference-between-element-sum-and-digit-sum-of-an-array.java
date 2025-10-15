@@ -18,6 +18,6 @@ class Solution {
             digitSum = digitSum + individualDigitSum;
         }
 
-        return Math.abs(sum - digitSum);
+        return ((sum - digitSum) < 0) ? ((sum - digitSum) * -1) : (sum - digitSum);
     }
 }
