@@ -3,24 +3,8 @@ class Solution {
 
         int[] ans = new int[2 * (nums.length)];
         
-        int index = 0;
-
-        for ( int i = 0; i < (nums.length); i++) {
-
-            ans[index++] = nums[i];
-
-            if (((nums.length) - 1) == i) {
-
-                if (index < ans.length) {
-
-                    i = -1;
-
-                } else{
-
-                    break;
-                }
-            }
-        }
+        System.arraycopy(nums, 0, ans, 0, (nums.length));
+        System.arraycopy(nums, 0, ans, (nums.length), (nums.length));
 
         return ans;
     }
