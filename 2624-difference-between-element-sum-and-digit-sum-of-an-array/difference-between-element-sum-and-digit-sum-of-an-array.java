@@ -6,23 +6,22 @@ class Solution {
         for (int number : nums) {
 
             sum = sum + number;
-
-            int individualDigitSum = 0;
-            char[] digits = Integer.toString(number).toCharArray();
-            if (digits.length > 1){
-
-                for (char digit : digits) {
-
-                    individualDigitSum = individualDigitSum + Character.getNumericValue((digit));
-                }
-
-            } else {
-
-                individualDigitSum = individualDigitSum + number;
-            }
-            digitSum = digitSum + individualDigitSum;
+            digitSum = digitSum + getIndividualDigitSum(number);
         }
 
         return Math.abs(sum - digitSum);
+    }
+
+    public int getIndividualDigitSum (int number) {
+
+        int individualDigitSum = 0;
+        do {
+
+            individualDigitSum = individualDigitSum + (number % 10);
+            number = number / 10;
+
+        } while (number != 0);
+
+        return individualDigitSum;
     }
 }
