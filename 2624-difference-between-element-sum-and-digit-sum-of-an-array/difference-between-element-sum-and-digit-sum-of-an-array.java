@@ -8,12 +8,13 @@ class Solution {
             sum = sum + nums[i];
 
             int individualDigitSum = 0;
+            int number = nums[i];
             do {
 
-                individualDigitSum = individualDigitSum + (nums[i] % 10);
-                nums[i] = nums[i] / 10;
+                individualDigitSum = individualDigitSum + (number % 10);
+                number = number / 10;
 
-            } while (nums[i] > 0);
+            } while (number > 0);
 
             digitSum = digitSum + individualDigitSum;
         }
