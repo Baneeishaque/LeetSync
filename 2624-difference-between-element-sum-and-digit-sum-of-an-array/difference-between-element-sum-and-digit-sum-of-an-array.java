@@ -8,17 +8,21 @@ class Solution {
             sum = sum + number;
 
             int individualDigitSum = 0;
-            do {
+            char[] digits = Integer.toString(number).toCharArray();
+            if (digits.length > 1){
 
-                individualDigitSum = individualDigitSum + (number % 10);
-                number = number / 10;
+                for (char digit : digits) {
 
-            } while (number > 0);
+                    individualDigitSum = individualDigitSum + Integer.valueOf(String.valueOf(digit));
+                }
 
+            } else {
+
+                individualDigitSum = individualDigitSum + number;
+            }
             digitSum = digitSum + individualDigitSum;
         }
 
-        int result = sum - digitSum;
-        return (result < 0) ? (result * -1) : result;
+        return Math.abs(sum - digitSum);
     }
 }
