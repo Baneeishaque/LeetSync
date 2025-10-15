@@ -13,7 +13,7 @@ class Solution {
 
                 for (char digit : digits) {
 
-                    individualDigitSum = individualDigitSum + Integer.valueOf(String.valueOf(digit));
+                    individualDigitSum = individualDigitSum + Character.getNumericValue((digit));
                 }
 
             } else {
