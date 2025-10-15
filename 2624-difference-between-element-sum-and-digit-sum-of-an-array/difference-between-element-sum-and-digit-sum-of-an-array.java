@@ -18,6 +18,7 @@ class Solution {
             digitSum = digitSum + individualDigitSum;
         }
 
-        return ((sum - digitSum) < 0) ? ((sum - digitSum) * -1) : (sum - digitSum);
+        int result = sum - digitSum;
+        return (result < 0) ? (result * -1) : result;
     }
 }
